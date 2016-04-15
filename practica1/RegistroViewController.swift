@@ -44,7 +44,7 @@ class RegistroViewController: UIViewController {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         indicador.startAnimating()
         print("Registro")
-        if(checkPassword() && checkSwitch() && checkName() && checkUser()){
+        if(checkSwitch() && checkPassword() && checkName() && checkUser()){
             if let email = emailOutlet.text{
                 registerUser(email, password:passOutlet.text!,username:userOutlet.text!,name:nameOutlet.text!)
             }
