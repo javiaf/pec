@@ -21,10 +21,13 @@
 		53D2C0C21CC0113100119880 /* MediaLibiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D2C0A81CC0113100119880 /* MediaLibiOS.a */; };
 		53D2C0C31CC0113100119880 /* libspeex.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D2C0B31CC0113100119880 /* libspeex.a */; };
 		53D2C0C41CC0113100119880 /* libx264.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D2C0B91CC0113100119880 /* libx264.a */; };
-		53D2C0C61CC026A900119880 /* ManageUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0C51CC026A900119880 /* ManageUsers.swift */; };
 		53D2C0CA1CC0BD1400119880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0C91CC0BD1400119880 /* RegistroViewController.swift */; };
 		53D2C0CC1CC0D3E700119880 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0CB1CC0D3E700119880 /* User.swift */; };
 		53D2C0CE1CC0F54800119880 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0CD1CC0F54800119880 /* MainViewController.swift */; };
+		53D2C0D01CC10A3400119880 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0CF1CC10A3400119880 /* UserViewController.swift */; };
+		53D2C0D21CC10E8800119880 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0D11CC10E8800119880 /* MapaViewController.swift */; };
+		53D2C0D41CC10EAA00119880 /* SitiosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0D31CC10EAA00119880 /* SitiosViewController.swift */; };
+		53D2C0D61CC10EC100119880 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0D51CC10EC100119880 /* InfoViewController.swift */; };
 		53E587441CBD53E00027E676 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587431CBD53E00027E676 /* AppDelegate.swift */; };
 		53E587461CBD53E00027E676 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587451CBD53E00027E676 /* ViewController.swift */; };
 		53E587491CBD53E00027E676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E587471CBD53E00027E676 /* Main.storyboard */; };
@@ -236,10 +239,13 @@
 		53D2C0B61CC0113100119880 /* x264.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x264.h; sourceTree = "<group>"; };
 		53D2C0B71CC0113100119880 /* x264_config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x264_config.h; sourceTree = "<group>"; };
 		53D2C0B91CC0113100119880 /* libx264.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libx264.a; sourceTree = "<group>"; };
-		53D2C0C51CC026A900119880 /* ManageUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageUsers.swift; sourceTree = "<group>"; };
 		53D2C0C91CC0BD1400119880 /* RegistroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		53D2C0CB1CC0D3E700119880 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		53D2C0CD1CC0F54800119880 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		53D2C0CF1CC10A3400119880 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		53D2C0D11CC10E8800119880 /* MapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		53D2C0D31CC10EAA00119880 /* SitiosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SitiosViewController.swift; sourceTree = "<group>"; };
+		53D2C0D51CC10EC100119880 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		53E587401CBD53E00027E676 /* practica1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = practica1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E587431CBD53E00027E676 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53E587451CBD53E00027E676 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -691,10 +697,13 @@
 				53E5874A1CBD53E00027E676 /* Assets.xcassets */,
 				53E5874C1CBD53E00027E676 /* LaunchScreen.storyboard */,
 				53E5874F1CBD53E00027E676 /* Info.plist */,
-				53D2C0C51CC026A900119880 /* ManageUsers.swift */,
 				53D2C0C91CC0BD1400119880 /* RegistroViewController.swift */,
 				53D2C0CB1CC0D3E700119880 /* User.swift */,
 				53D2C0CD1CC0F54800119880 /* MainViewController.swift */,
+				53D2C0CF1CC10A3400119880 /* UserViewController.swift */,
+				53D2C0D11CC10E8800119880 /* MapaViewController.swift */,
+				53D2C0D31CC10EAA00119880 /* SitiosViewController.swift */,
+				53D2C0D51CC10EC100119880 /* InfoViewController.swift */,
 			);
 			path = practica1;
 			sourceTree = "<group>";
@@ -848,12 +857,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				53D2C0C61CC026A900119880 /* ManageUsers.swift in Sources */,
+				53D2C0D01CC10A3400119880 /* UserViewController.swift in Sources */,
+				53D2C0D21CC10E8800119880 /* MapaViewController.swift in Sources */,
 				53D2C0CA1CC0BD1400119880 /* RegistroViewController.swift in Sources */,
+				53D2C0D61CC10EC100119880 /* InfoViewController.swift in Sources */,
 				53E587461CBD53E00027E676 /* ViewController.swift in Sources */,
 				53D2C0CE1CC0F54800119880 /* MainViewController.swift in Sources */,
 				53D2C0CC1CC0D3E700119880 /* User.swift in Sources */,
 				53E587441CBD53E00027E676 /* AppDelegate.swift in Sources */,
+				53D2C0D41CC10EAA00119880 /* SitiosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

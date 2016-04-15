@@ -8,12 +8,8 @@
 
 import Foundation
 class User{
-    var email = ""
-    var nombreCompleto = ""
-    var userName = ""
-    init(email:String, nombreCompleto:String, userName: String){
-        self.email=email
-        self.nombreCompleto=nombreCompleto
-        self.userName=userName
-    }
+    static var email = ""
+    static var nombreCompleto = ""
+    static var userName = ""
+    static let backendless = Backendless.sharedInstance()
 }
