@@ -24,6 +24,7 @@
 		53D2C0C61CC026A900119880 /* ManageUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0C51CC026A900119880 /* ManageUsers.swift */; };
 		53D2C0CA1CC0BD1400119880 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0C91CC0BD1400119880 /* RegistroViewController.swift */; };
 		53D2C0CC1CC0D3E700119880 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0CB1CC0D3E700119880 /* User.swift */; };
+		53D2C0CE1CC0F54800119880 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53D2C0CD1CC0F54800119880 /* MainViewController.swift */; };
 		53E587441CBD53E00027E676 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587431CBD53E00027E676 /* AppDelegate.swift */; };
 		53E587461CBD53E00027E676 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E587451CBD53E00027E676 /* ViewController.swift */; };
 		53E587491CBD53E00027E676 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 53E587471CBD53E00027E676 /* Main.storyboard */; };
@@ -238,6 +239,7 @@
 		53D2C0C51CC026A900119880 /* ManageUsers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageUsers.swift; sourceTree = "<group>"; };
 		53D2C0C91CC0BD1400119880 /* RegistroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		53D2C0CB1CC0D3E700119880 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		53D2C0CD1CC0F54800119880 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		53E587401CBD53E00027E676 /* practica1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = practica1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		53E587431CBD53E00027E676 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		53E587451CBD53E00027E676 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				53D2C0C51CC026A900119880 /* ManageUsers.swift */,
 				53D2C0C91CC0BD1400119880 /* RegistroViewController.swift */,
 				53D2C0CB1CC0D3E700119880 /* User.swift */,
+				53D2C0CD1CC0F54800119880 /* MainViewController.swift */,
 			);
 			path = practica1;
 			sourceTree = "<group>";
@@ -848,6 +851,7 @@
 				53D2C0C61CC026A900119880 /* ManageUsers.swift in Sources */,
 				53D2C0CA1CC0BD1400119880 /* RegistroViewController.swift in Sources */,
 				53E587461CBD53E00027E676 /* ViewController.swift in Sources */,
+				53D2C0CE1CC0F54800119880 /* MainViewController.swift in Sources */,
 				53D2C0CC1CC0D3E700119880 /* User.swift in Sources */,
 				53E587441CBD53E00027E676 /* AppDelegate.swift in Sources */,
 			);
