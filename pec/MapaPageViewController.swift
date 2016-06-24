@@ -9,7 +9,8 @@
 import UIKit
 
 class MapaPageViewController: UIPageViewController {
-    
+
+    var currentPageIndex = 0
     weak var mapaDelegate: MapaPageViewControllerDelegate?
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
@@ -23,6 +24,8 @@ class MapaPageViewController: UIPageViewController {
         
         dataSource = self
         delegate = self
+
+        self.hidesBottomBarWhenPushed = true
         
         if let initialViewController = orderedViewControllers.first {
             scrollToViewController(initialViewController)
@@ -103,6 +106,8 @@ extension MapaPageViewController: UIPageViewControllerDataSource {
         guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
             return nil
         }
+
+        currentPageIndex = viewControllerIndex
         
         let previousIndex = viewControllerIndex - 1
         
@@ -124,7 +129,8 @@ extension MapaPageViewController: UIPageViewControllerDataSource {
         guard let viewControllerIndex = orderedViewControllers.indexOf(viewController) else {
             return nil
         }
-        
+
+        currentPageIndex = viewControllerIndex
         let nextIndex = viewControllerIndex + 1
         let orderedViewControllersCount = orderedViewControllers.count
         
@@ -139,6 +145,14 @@ extension MapaPageViewController: UIPageViewControllerDataSource {
         }
         
         return orderedViewControllers[nextIndex]
+    }
+
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return orderedViewControllers.count
+    }
+
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return currentPageIndex
     }
     
 }
