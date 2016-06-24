@@ -95,8 +95,15 @@ class MapaViewController: UIViewController, MKMapViewDelegate, CLLocationManager
                         print("searchingDataObjectByDistance (FAULT): \(exception as! Fault)")
         })
     }
+    
+    func sitesHandler(notif: NSNotification) {
+        stepper.value = Double(Global.totalkms)
+        distField.text = "\(Global.totalkms)"
+        reloadSites()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "sitesHandler:", name: "SitesTSearched", object: nil)
         self.mapOutlet.delegate = self
         distField.enabled = false;
         distField.text = "\(Int(stepper.value))";

@@ -64,6 +64,7 @@ class SitiosTableVController: UITableViewController, NewSiteViewControllerDelega
    let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "subtitleCell")
         cell.textLabel?.text = "\(self.sitiosList[indexPath.row].nombre!)"
         cell.detailTextLabel?.text = "\(self.sitiosList[indexPath.row].descripcion!)"
+
         if(self.sitiosList[indexPath.row].fotos.count != 0)
         {
             if let imageUrl = self.sitiosList[indexPath.row].fotos[0].image{

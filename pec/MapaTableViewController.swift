@@ -8,14 +8,22 @@
 
 import UIKit
 
-class MapaTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MapaTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
 
     
     // Data model: These strings will be the data for the table view cells
     // cell reuse id (cells that scroll out of view can be reused)
-    let cellReuseIdentifier = "cell"
+    var rowNo : Int = 0;
+    let locationManager = CLLocationManager()
+    var isUpdatingLocation = false
+    var lastLocationError: NSError?
+    let authStatus = CLLocationManager.authorizationStatus()
+    var location: CLLocation?
     override func viewDidLoad() {
         super.viewDidLoad()
+        distanciaTF.text = "\(Global.totalkms))"
+        distStep.value = Double(Global.totalkms)
+        distanciaTF.enabled = false;
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "sitesHandler:", name: "SitesSearched", object: nil)
         // Register the table view cell class and its reuse id
         
@@ -24,11 +32,48 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.dataSource = self
         // Do any additional setup after loading the view.
     }
+    @IBOutlet weak var distanciaTF: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var distStep: UIStepper!
+    @IBAction func distChanged(sender: AnyObject) {
+        distanciaTF.text = "\(Int(distStep.value))"
+        Global.totalkms = Int(distStep.value)
+
+    }
+    
+    @IBAction func buscaSitios(sender: AnyObject) {
+        searchingDataObjectByDistance();
+        tableView.reloadData()
+        NSNotificationCenter.defaultCenter().postNotificationName("SitesTSearched", object: nil);
+    }
+
+    func searchingDataObjectByDistance() {
+        
+        Types.tryblock({ () -> Void in
+            Global.sitios = []
+            let queryOptions = QueryOptions()
+            queryOptions.relationsDepth = 1;
+            
+            let dataQuery = BackendlessDataQuery()
+            dataQuery.queryOptions = queryOptions;
+            dataQuery.whereClause = "distance( \(self.location!.coordinate.latitude), \(self.location!.coordinate.longitude), coordinates.latitude, coordinates.longitude ) <= km(\(Int(self.distStep.value)))"
+            
+            let sitios = Global.backendless.persistenceService.find(Sitio.ofClass(),
+                dataQuery:dataQuery) as BackendlessCollection
+            
+            for sitio in sitios.data as! [Sitio] {
+                Global.sitios += [sitio]
+            }
+            
+            },
+                       catchblock: { (exception) -> Void in
+                        print("searchingDataObjectByDistance (FAULT): \(exception as! Fault)")
+        })
+    }
     func sitesHandler(notif: NSNotification) {
-        print("MyNotification was handled")
-        print(Global.sitios);
-        print(Global.totalkms)
+        distStep.value = Double(Global.totalkms)
+        distanciaTF.text = "\(Global.totalkms)"
+        self.tableView.reloadData()
     }
     // number of rows in table view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,10 +85,6 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Listado de Sitios"
     }
-    /*func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        //
-        return nil
-    }*/
     // create a cell for each table view row
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -64,12 +105,12 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         return cell
         
-        return cell
     }
     
     // method to run when table view cell is tapped
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        rowNo = indexPath.row;
+        self.performSegueWithIdentifier("GoToSite", sender: self)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,14 +118,62 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
+        if let destinationVC = segue.destinationViewController as? SitioGlobalViewController{
+            let sitio = Global.sitios[rowNo]
+            destinationVC.sitio = sitio
+
+        }
     }
-    */
+    
+    func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            isUpdatingLocation = true
+        }
+    }
+    
+    func stopLocationManager() {
+        if isUpdatingLocation {
+            locationManager.stopUpdatingLocation()
+            locationManager.delegate = nil
+            isUpdatingLocation = false
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
+        let newLocation = locations.last!
+        print("didUpdateLocations \(newLocation)")
+        if newLocation.timestamp.timeIntervalSinceNow < -5 {
+            return
+        }
+        if newLocation.horizontalAccuracy < 0 {
+            return
+        }
+        if location == nil || location!.horizontalAccuracy > newLocation.horizontalAccuracy {
+            lastLocationError = nil
+            location = newLocation
+        }
+        if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
+            print("Got the desired accuracy")
+            stopLocationManager();
+        }
+    }
+    
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("didFailWithError \(error)")
+        if error.code == CLError.LocationUnknown.rawValue {
+            return
+        }
+        lastLocationError = error
+        stopLocationManager()
+    }
 
 }

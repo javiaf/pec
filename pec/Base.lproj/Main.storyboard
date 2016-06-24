@@ -566,6 +566,7 @@
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="distChanged:" destination="OEM-Mn-nXk" eventType="valueChanged" id="GmU-7A-xL6"/>
+                                                    <action selector="distChanged:" destination="73A-1l-iCs" eventType="valueChanged" id="JWn-H2-9bF"/>
                                                 </connections>
                                             </stepper>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Distancia (Kms) " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-Tq-9Ks">
@@ -598,6 +599,9 @@
                                         <state key="normal" title="Buscar Sitios">
                                             <color key="titleColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="buscaSitios:" destination="73A-1l-iCs" eventType="touchUpInside" id="wrB-cc-osN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -606,7 +610,10 @@
                     </view>
                     <navigationItem key="navigationItem" title="Mapa" id="Shq-ok-mWU"/>
                     <connections>
+                        <outlet property="distStep" destination="FFH-jg-oUD" id="7uZ-wn-5vn"/>
+                        <outlet property="distanciaTF" destination="dHJ-Y3-SXl" id="heL-SG-HqR"/>
                         <outlet property="tableView" destination="dX8-2Z-BrZ" id="hoL-FT-600"/>
+                        <segue destination="Tky-Yk-S1l" kind="show" identifier="GoToSite" id="O0I-RV-4uR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufw-jq-QXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1581,5 +1588,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="GKa-hx-THM"/>
+        <segue reference="O0I-RV-4uR"/>
     </inferredMetricsTieBreakers>
 </document>
