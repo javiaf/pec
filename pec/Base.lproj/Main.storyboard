@@ -528,7 +528,7 @@
             </objects>
             <point key="canvasLocation" x="4001" y="258"/>
         </scene>
-        <!--Mapa Table View Controller-->
+        <!--Mapa-->
         <scene sceneID="fwh-iI-Pod">
             <objects>
                 <viewController storyboardIdentifier="MapaTableViewController" id="73A-1l-iCs" customClass="MapaTableViewController" customModule="pec" customModuleProvider="target" sceneMemberID="viewController">
@@ -540,14 +540,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-pA-YAa">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VHA-pA-YAa">
                                 <rect key="frame" x="20" y="20" width="560" height="551"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-2Z-BrZ">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dX8-2Z-BrZ">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="478"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Bnz-H1-Ytc">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Bnz-H1-Ytc">
                                                 <rect key="frame" x="0.0" y="28" width="560" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bnz-H1-Ytc" id="BTh-OV-sSQ">
@@ -558,23 +558,23 @@
                                         </prototypes>
                                         <sections/>
                                     </tableView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="X5z-xe-O4F">
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="X5z-xe-O4F">
                                         <rect key="frame" x="139" y="483" width="283" height="29"/>
                                         <subviews>
-                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FFH-jg-oUD">
+                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="FFH-jg-oUD">
                                                 <rect key="frame" x="0.0" y="0.0" width="94" height="29"/>
                                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <connections>
                                                     <action selector="distChanged:" destination="OEM-Mn-nXk" eventType="valueChanged" id="GmU-7A-xL6"/>
                                                 </connections>
                                             </stepper>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Distancia (Kms) " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-Tq-9Ks">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Distancia (Kms) " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1vU-Tq-9Ks">
                                                 <rect key="frame" x="106" y="0.0" width="125" height="29"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHJ-Y3-SXl">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dHJ-Y3-SXl">
                                                 <rect key="frame" x="243" y="0.0" width="40" height="29"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="FAZ-hs-3Ut"/>
@@ -588,7 +588,7 @@
                                             <constraint firstItem="dHJ-Y3-SXl" firstAttribute="leading" secondItem="1vU-Tq-9Ks" secondAttribute="trailing" constant="12" id="XCg-MI-mNv"/>
                                         </constraints>
                                     </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-Kk-O0L">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZs-Kk-O0L">
                                         <rect key="frame" x="223" y="517" width="114" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="114" id="Fwg-w1-bIn"/>
@@ -603,13 +603,8 @@
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.094117647058823528" green="0.098039215686274508" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="dar-wr-ARj" firstAttribute="top" secondItem="VHA-pA-YAa" secondAttribute="bottom" constant="29" id="2uL-xV-8Uz"/>
-                            <constraint firstItem="VHA-pA-YAa" firstAttribute="leading" secondItem="Fmx-ie-HDt" secondAttribute="leadingMargin" id="VLa-x3-OFI"/>
-                            <constraint firstItem="VHA-pA-YAa" firstAttribute="trailing" secondItem="Fmx-ie-HDt" secondAttribute="trailingMargin" id="awZ-Cm-Bkb"/>
-                            <constraint firstItem="VHA-pA-YAa" firstAttribute="top" secondItem="Pzt-jf-k0c" secondAttribute="bottom" id="zaq-Vx-q0y"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Mapa" id="Shq-ok-mWU"/>
                     <connections>
                         <outlet property="tableView" destination="dX8-2Z-BrZ" id="hoL-FT-600"/>
                     </connections>

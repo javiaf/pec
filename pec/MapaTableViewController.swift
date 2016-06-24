@@ -12,15 +12,12 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
 
     
     // Data model: These strings will be the data for the table view cells
-    let animals: [String] = ["Horse", "Cow", "Camel", "Sheep", "Goat"]
-    
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "cell"
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "sitesHandler:", name: "SitesSearched", object: nil)
         // Register the table view cell class and its reuse id
-        self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
         
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self
@@ -35,19 +32,37 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     // number of rows in table view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.animals.count
+        return Global.sitios.count
     }
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Listado de Sitios"
+    }
+    /*func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //
+        return nil
+    }*/
     // create a cell for each table view row
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        // create a new cell if needed or reuse an old one
-        let cell:UITableViewCell = self.tableView.dequeueReusableCellWithIdentifier(cellReuseIdentifier) as UITableViewCell!
-        
-        // set the text from the data model
-        cell.textLabel?.text = self.animals[indexPath.row]
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "subtitleCell")
+        cell.textLabel?.text = "\(Global.sitios[indexPath.row].nombre!)"
+        cell.detailTextLabel?.text = "\(Global.sitios[indexPath.row].descripcion!)"
+        if(Global.sitios[indexPath.row].fotos.count != 0)
+        {
+            if let imageUrl = Global.sitios[indexPath.row].fotos[0].image{
+                print(imageUrl)
+                let url = NSURL(string: imageUrl)
+                let data = NSData(contentsOfURL:url!)
+                if (data != nil) {
+                    cell.imageView?.image = UIImage(data:data!)
+                    
+                }
+            }
+        }
+        return cell
         
         return cell
     }
