@@ -24,8 +24,6 @@ class MapaPageViewController: UIPageViewController {
         
         dataSource = self
         delegate = self
-
-        self.hidesBottomBarWhenPushed = true
         
         if let initialViewController = orderedViewControllers.first {
             scrollToViewController(initialViewController)
