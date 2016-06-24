@@ -32,8 +32,8 @@ class MapaViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         return valoracion
     }
     func reloadSites(){
+        removeAllPinsButUserLocation()
         if Global.sitios.count > 0{
-            removeAllPinsButUserLocation()
             var i = 0;
             for sitio in Global.sitios{
                 if let coordinates = sitio.coordinates{
@@ -100,6 +100,7 @@ class MapaViewController: UIViewController, MKMapViewDelegate, CLLocationManager
         stepper.value = Double(Global.totalkms)
         distField.text = "\(Global.totalkms)"
         reloadSites()
+        centerMapOnLocation(location!, kilometers: Global.totalkms)
     }
     override func viewDidLoad() {
         super.viewDidLoad()

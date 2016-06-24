@@ -21,7 +21,7 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
     var location: CLLocation?
     override func viewDidLoad() {
         super.viewDidLoad()
-        distanciaTF.text = "\(Global.totalkms))"
+        distanciaTF.text = "\(Global.totalkms)"
         distStep.value = Double(Global.totalkms)
         distanciaTF.enabled = false;
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "sitesHandler:", name: "SitesSearched", object: nil)
@@ -30,6 +30,7 @@ class MapaTableViewController: UIViewController, UITableViewDelegate, UITableVie
         // This view controller itself will provide the delegate methods and row data for the table view.
         tableView.delegate = self
         tableView.dataSource = self
+        startLocationManager()
         // Do any additional setup after loading the view.
     }
     @IBOutlet weak var distanciaTF: UITextField!
