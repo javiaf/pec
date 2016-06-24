@@ -24,7 +24,7 @@ class RegistroViewController: UIViewController {
         user.email = email
         user.password = password
         user.addProperties(["user" : username, "name": name])
-        User.backendless.userService.registering(user, response: { (registeredUser) -> Void in
+        Global.backendless.userService.registering(user, response: { (registeredUser) -> Void in
             // Código en caso de registro correcto
             let email = registeredUser.email
             self.showAlert("Registro",message: "Usuario con email: \(email) registrado correctamente")
@@ -44,7 +44,7 @@ class RegistroViewController: UIViewController {
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         indicador.startAnimating()
         print("Registro")
-        if(checkSwitch() && checkPassword() && checkName() && checkUser()){
+        if(checkSwitch() && checkPassword() && checkEmail() && checkName() && checkUser()){
             if let email = emailOutlet.text{
                 registerUser(email, password:passOutlet.text!,username:userOutlet.text!,name:nameOutlet.text!)
             }
@@ -69,6 +69,15 @@ class RegistroViewController: UIViewController {
         }
     showAlert("User",message: "El username se encuentra vacío")
     return false
+    }
+    func checkEmail() ->Bool{
+        if let email = emailOutlet.text{
+            if !email.isEmpty{
+                return true
+            }
+        }
+        showAlert("Email",message: "El email se encuentra vacío")
+        return false
     }
     
     func checkName() ->Bool{

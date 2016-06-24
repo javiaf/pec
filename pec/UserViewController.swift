@@ -16,11 +16,11 @@ class UserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         userField.enabled=false
-        userField.text=User.userName
+        userField.text=Global.userName
         nameField.enabled=false
-        nameField.text=User.nombreCompleto
+        nameField.text=Global.nombreCompleto
         emailField.enabled=false
-        emailField.text=User.email
+        emailField.text=Global.email
         self.navigationController!.title = "Perfil"
 
         // Do any additional setup after loading the view.

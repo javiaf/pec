@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:practica1.xcodeproj">
+      location = "self:/Users/javiaf/Developer/pec/pec.xcodeproj">
    </FileRef>
 </Workspace>

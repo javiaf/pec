@@ -7,9 +7,11 @@
 //
 
 import Foundation
-class User{
+class Global{
     static var email = ""
     static var nombreCompleto = ""
     static var userName = ""
     static let backendless = Backendless.sharedInstance()
+    static var sitios: [Sitio] = []
+    static var totalkms = 1;
 }

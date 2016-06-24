@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EF0B3521C1FAE9C5052B7366C0E4796936CAB533",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "EF0B3521C1FAE9C5052B7366C0E4796936CAB533" : 0,
+    "8211DB8A25B93C5A27A19A5521E6302076AD013D" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "0D9031BB-1F23-4750-BE6F-EF410EC40108",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "EF0B3521C1FAE9C5052B7366C0E4796936CAB533" : "pec\/",
+    "8211DB8A25B93C5A27A19A5521E6302076AD013D" : "FloatRatingView\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "pec",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "pec.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/glenyi\/FloatRatingView.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8211DB8A25B93C5A27A19A5521E6302076AD013D"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/javiaf\/practica1.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EF0B3521C1FAE9C5052B7366C0E4796936CAB533"
+    }
+  ]
+}

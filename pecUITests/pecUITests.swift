@@ -8,7 +8,7 @@
 
 import XCTest
 
-class practica1UITests: XCTestCase {
+class practica2UITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
